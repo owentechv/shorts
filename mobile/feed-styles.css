@@ -1,4 +1,4 @@
-/* Add styles specific to desktop version here */
+/* Add styles specific to mobile feed version here */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -37,32 +37,37 @@ body {
     cursor: pointer;
 }
 
-.homepage-content {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
+.feed {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
 }
 
-.homepage-content h1 {
-    font-size: 32px;
+.video-card {
+    flex: 0 0 100%;
+    background-color: #fff;
+    margin: 0;
+    padding: 10px;
+    border-radius: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.homepage-content p {
-    font-size: 18px;
-    color: #555;
+.video-card video {
+    width: 100%;
+    border-radius: 8px;
 }
 
-.homepage-content .explore-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 20px;
-    margin-top: 20px;
+.video-card .user-info {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
 }
 
-.homepage-content .explore-btn:hover {
-    background-color: #0056b3;
+.video-card .user-info img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
 }
+
+.video-card

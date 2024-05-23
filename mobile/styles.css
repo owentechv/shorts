@@ -1,4 +1,4 @@
-/* Add styles specific to desktop version here */
+/* Add styles specific to mobile version here */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -38,18 +38,16 @@ body {
 }
 
 .homepage-content {
-    max-width: 600px;
-    margin: auto;
     padding: 20px;
     text-align: center;
 }
 
 .homepage-content h1 {
-    font-size: 32px;
+    font-size: 28px;
 }
 
 .homepage-content p {
-    font-size: 18px;
+    font-size: 16px;
     color: #555;
 }
 
