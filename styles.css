@@ -83,3 +83,42 @@ body {
     font-weight: bold;
     color: #fff;
 }
+/* Profile List Styles */
+.profile-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.profile-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.profile-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.profile-picture {
+    height: 100px;
+    width: 100px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.username {
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.user-bio {
+    padding: 10px;
+    font-size: 14px;
+    color: #666;
+}
