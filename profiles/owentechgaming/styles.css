@@ -113,3 +113,17 @@ body {
     font-size: 14px;
     color: #666;
 }
+.social-media-bar {
+    margin-top: 10px;
+}
+
+.social-media-link {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-media-link img {
+    width: 30px; /* Adjust the size of the social media icons */
+    height: auto;
+}
+
