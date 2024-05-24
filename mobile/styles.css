@@ -1,4 +1,4 @@
-/* Add styles specific to mobile version here */
+/* Add styles specific to desktop version here */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -38,16 +38,18 @@ body {
 }
 
 .homepage-content {
+    max-width: 600px;
+    margin: auto;
     padding: 20px;
     text-align: center;
 }
 
 .homepage-content h1 {
-    font-size: 28px;
+    font-size: 32px;
 }
 
 .homepage-content p {
-    font-size: 16px;
+    font-size: 18px;
     color: #555;
 }
 
@@ -63,4 +65,21 @@ body {
 
 .homepage-content .explore-btn:hover {
     background-color: #0056b3;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-image {
+    height: 40px; /* Adjust the height as needed */
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
 }

@@ -1,4 +1,4 @@
-/* Add styles specific to mobile feed version here */
+/* Add styles specific to desktop feed version here */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -38,17 +38,16 @@ body {
 }
 
 .feed {
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px 0;
 }
 
 .video-card {
-    flex: 0 0 100%;
     background-color: #fff;
-    margin: 0;
+    margin-bottom: 20px;
     padding: 10px;
-    border-radius: 0;
+    border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -70,4 +69,34 @@ body {
     margin-right: 10px;
 }
 
-.video-card
+.video-card .user-info .username {
+    font-weight: bold;
+}
+
+.video-card .share-btn {
+    display: block;
+    margin: 10px 0 0 auto;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-image {
+    height: 40px; /* Adjust the height as needed */
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}

@@ -66,3 +66,20 @@ body {
 .homepage-content .explore-btn:hover {
     background-color: #0056b3;
 }
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-image {
+    height: 40px; /* Adjust the height as needed */
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
