@@ -11,60 +11,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #fff;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.navbar .logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.navbar .search-bar {
-    flex-grow: 1;
-    margin: 0 20px;
-    padding: 5px 10px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-}
-
-.navbar .upload-btn {
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.homepage-content {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
-}
-
-.homepage-content h1 {
-    font-size: 32px;
-}
-
-.homepage-content p {
-    font-size: 18px;
-    color: #555;
-}
-
-.homepage-content .explore-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 20px;
-    margin-top: 20px;
-}
-
-.homepage-content .explore-btn:hover {
-    background-color: #0056b3;
+    background-color: #ffffff;
 }
 
 .logo {
@@ -84,10 +31,18 @@ body {
     color: #fff;
 }
 
+.navbar .upload-btn {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
 /* User Profile Styles */
 .user-profile {
     display: flex;
-    flex-direction: column;
     align-items: center;
     padding: 20px;
     background-color: #fff;
@@ -100,14 +55,12 @@ body {
     height: 100px;
     width: 100px;
     border-radius: 50%;
-    margin-bottom: 10px;
+    margin-right: 20px;
 }
 
 .user-info {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
 }
 
 .username {
@@ -134,18 +87,16 @@ body {
     margin-top: 0;
     font-size: 24px;
     color: #333;
-    text-align: center;
 }
 
 .video-list {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
 }
 
 .video-card {
-    width: 100%;
-    margin: 10px 0;
+    width: 300px;
+    margin: 10px;
     padding: 10px;
     background-color: #fff;
     border-radius: 10px;
@@ -175,3 +126,4 @@ body {
     width: 30px; /* Adjust the size of the social media icons */
     height: auto;
 }
+
