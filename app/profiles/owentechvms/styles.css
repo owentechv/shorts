@@ -1,0 +1,129 @@
+/* Shared Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-image {
+    height: 40px; /* Adjust the height as needed */
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.navbar .upload-btn {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* User Profile Styles */
+.user-profile {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-picture {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.username {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.user-bio {
+    font-size: 16px;
+    color: #666;
+}
+
+/* User Videos Styles */
+.user-videos {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-videos h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.video-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.video-card {
+    width: 300px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.video-card video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.video-card .description {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+}
+.social-media-bar {
+    margin-top: 10px;
+}
+
+.social-media-link {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-media-link img {
+    width: 30px; /* Adjust the size of the social media icons */
+    height: auto;
+}
+
