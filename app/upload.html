@@ -9,25 +9,6 @@
 <body>
     <div class="container">
         <h1>Upload Your Video</h1>
-        <form id="upload-form">
-            <label for="video-link">Video Link:</label>
-            <input type="text" id="video-link" name="video-link"><br><br>
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-    <script>
-        document.getElementById("upload-form").addEventListener("submit", function(event) {
-            event.preventDefault();
-            const videoLink = document.getElementById("video-link").value;
-            // You can handle the submission here, e.g., send an email or display a thank you message.
-            // For demonstration purposes, let's open the user's email app.
-            const emailSubject = "New Video Submission";
-            const emailBody = "Video Link: " + videoLink;
-            const mailtoLink = "mailto:owentech1@outlook.com?subject=" + encodeURIComponent(emailSubject) + "&body=" + encodeURIComponent(emailBody);
-            window.location.href = mailtoLink;
-            // After submission, you can redirect to a thank you page if needed.
-            window.location.href = "thank-you.html";
-        });
-    </script>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScRvVvCSoFg3yTcGFmduMSQDiVNehzb2UM41t14X5T0s1jtvA/viewform?embedded=true" width="640" height="607" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 </body>
 </html>
