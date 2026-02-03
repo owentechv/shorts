@@ -3,92 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OT Shorts - Feed</title>
+    <title>Feed - Luma Shorts</title>
     <link rel="stylesheet" href="feed-styles.css">
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <img src="logo.png" alt="OT Shorts Logo" class="logo-image">
-        <div class="logo-text">OT Shorts</div>
-    </a>
-</nav>
+        <img src="logo.png" alt="Luma Shorts Logo" class="logo-image">
+        <div class="logo-text">Luma Shorts</div>
+    </nav>
 
-    <!-- Desktop Feed Content -->
-    <div class="feed">
-        <!-- Video Card 1 -->
-        <div class="video-card">
-            <video src="/shorts/shorts/mp4/short1.mp4" controls></video>
-            <div class="user-info">
-                <img src="profiles/owentechgaming/channel1_profile.jpg" alt="Owen Tech Gaming">
-                <div>
-                    <div class="username">Owen Tech Gaming</div>
-                    <div class="description">Fortnite Short #fortnite #shorts</div>
-                </div>
-            </div>
-            <a href="share/video2.html" class="share-btn">Share</a>
-        </div>
-        <!-- Video Card 2 -->
-        <div class="video-card">
-            <video src="/shorts/shorts/mp4/short2.mp4" controls></video>
-            <div class="user-info">
-                <img src="profiles/owentechgaming/channel1_profile.jpg" alt="Owen Tech Gaming">
-                <div>
-                    <div class="username">Owen Tech Gaming</div>
-                    <div class="description">Sonic 1 Blastless #sonic #sonicthehedgehog</div>
-                </div>
-            </div>
-            <a href="share/video1.html" class="share-btn">Share</a>
-        </div>
-        <!-- Video Card 3 -->
-        <div class="video-card">
-            <video src="/shorts/shorts/mp4/short3.mp4" controls></video>
-            <div class="user-info">
-                <img src="profiles/owentechgaming/channel1_profile.jpg" alt="Owen Tech Gaming">
-                <div>
-                    <div class="username">Owen Tech Gaming</div>
-                    <div class="description">Sonic 1 Oergomized #sonic</div>
-                </div>
-            </div>
-            <a href="share/video3.html" class="share-btn">Share</a>
-        </div>
-        <!-- Video Card 4 -->
-        <div class="video-card">
-            <video src="/shorts/shorts/mp4/short4.mp4" controls></video>
-            <div class="user-info">
-                <img src="profiles/owentechgaming/channel1_profile.jpg" alt="Owen Tech Gaming">
-                <div>
-                    <div class="username">Owen Tech Gaming</div>
-                    <div class="description">Mario Kart 8 #mariokart #wiiu</div>
-                </div>
-            </div>
-            <a href="share/video4.html" class="share-btn">Share</a>
-        </div>
-         <!-- Video Card 5 -->
-         <div class="video-card">
-            <video src="/shorts/shorts/mp4/short5.mp4" controls></video>
-            <div class="user-info">
-                <img src="profiles/owentechgaming/channel1_profile.jpg" alt="Owen Tech Gaming">
-                <div>
-                    <div class="username">Owen Tech Gaming</div>
-                    <div class="description">Minecraft #minecraft #wiiu</div>
-                </div>
-            </div>
-            <a href="share/video5.html" class="share-btn">Share</a>
-        </div>
-         <!-- Video Card 6 -->
-         <div class="video-card">
-            <video src="/shorts/shorts/mp4/short6.mp4" controls></video>
-            <div class="user-info">
-                 <img src="profiles/owentechgaming/channel1_profile.jpg" alt="Owen Tech Gaming">
-                 <div>
-                     <div class="username">Owen Tech Gaming</div>
-                     <div class="description">Minecraft Tumble #minecraft #wiiu</div>
-                 </div>
-             </div>
-             <a href="share/video6.html" class="share-btn">Share</a>
-         </div>
-        <!-- Add more video cards as needed -->
-    </div>
+    <!-- Feed Container -->
+    <div class="feed" id="feed"></div>
+
+    <script>
+        // URL to your feed.json
+        const feedUrl = 'https://lumaprojects.github.io/shorts/feed.json';
+
+        async function loadFeed() {
+            try {
+                const response = await fetch(feedUrl);
+                const videos = await response.json();
+
+                const feedContainer = document.getElementById('feed');
+
+                videos.forEach(video => {
+                    // Video card container
+                    const card = document.createElement('div');
+                    card.className = 'video-card';
+
+                    // Video element
+                    const videoEl = document.createElement('video');
+                    videoEl.src = video.videoUrl;
+                    videoEl.controls = true;
+                    card.appendChild(videoEl);
+
+                    // User info container
+                    const userInfo = document.createElement('div');
+                    userInfo.className = 'user-info';
+
+                    const avatar = document.createElement('img');
+                    avatar.src = video.avatarUrl;
+                    avatar.alt = video.uploader;
+                    userInfo.appendChild(avatar);
+
+                    const textContainer = document.createElement('div');
+
+                    const username = document.createElement('div');
+                    username.className = 'username';
+                    username.textContent = video.uploader;
+
+                    const description = document.createElement('div');
+                    description.className = 'description';
+                    description.textContent = video.title;
+
+                    textContainer.appendChild(username);
+                    textContainer.appendChild(description);
+                    userInfo.appendChild(textContainer);
+
+                    card.appendChild(userInfo);
+
+                    // Optional share button (can remove later)
+                    /*
+                    const shareBtn = document.createElement('a');
+                    shareBtn.className = 'share-btn';
+                    shareBtn.href = '#';
+                    shareBtn.textContent = 'Share';
+                    card.appendChild(shareBtn);
+                    */
+
+                    feedContainer.appendChild(card);
+                });
+            } catch (err) {
+                console.error('Failed to load feed:', err);
+                const feedContainer = document.getElementById('feed');
+                feedContainer.innerHTML = '<p style="color:red;">Failed to load feed.</p>';
+            }
+        }
+
+        loadFeed();
+    </script>
 </body>
 </html>

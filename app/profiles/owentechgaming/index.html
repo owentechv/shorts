@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OT Shorts - Owen Tech Gaming</title>
+    <title>Owen Tech Gaming - Luma Shorts</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <a href="https://owentechv.github.io/shorts" class="logo">
-            <img src="logo.png" alt="OT Shorts Logo" class="logo-image">
+        <a href="https://lumaprojects.github.io/shorts" class="logo">
+            <img src="logo.png" alt="Luma Shorts Logo" class="logo-image">
         </a>
         <a href="upload.html" class="upload-btn">Upload</a>
     </nav>
@@ -25,25 +26,63 @@
         <a href="https://www.youtube.com/@owentechgaming" class="social-media-link" target="_blank">
             <img src="youtube.png" alt="YouTube">
         </a>
-        <a href="https://owentechv.github.io/video/channels/owentechgaming/channel_page.html" class="social-media-link" target="_blank">
-            <img src="twitter-icon.png" alt="Owen Tech Videos">
+
         </a>
     </div>
 
     <!-- User Videos Section -->
     <div class="user-videos">
         <h2>Owen Tech Gaming's Videos</h2>
-        <div class="video-list">
-            <div class="video-card">
-                <a href="https://owentechv.github.io/shorts/shorts/short1.html">Fortnite Short #fortnite #shorts</a>
-                <div class="description">A clip of me playing Fortnite</div>
-            </div>
-            <div class="video-card">
-                <a href="url">link text</a>
-                <div class="description">Description of video 2</div>
-            </div>
-            <!-- Add more video cards as needed -->
+        <div class="video-list" id="video-list">
+            <!-- Video cards will be inserted here dynamically -->
         </div>
     </div>
+
+    <script>
+        const feedUrl = 'https://lumaprojects.github.io/shorts/feed.json';
+        const usernameFilter = "Owen Tech Gaming"; // Only show this user's videos
+
+        async function loadUserVideos() {
+            try {
+                const response = await fetch(feedUrl);
+                const videos = await response.json();
+
+                const listContainer = document.getElementById('video-list');
+
+                // Filter videos for this user
+                const userVideos = videos.filter(v => v.uploader === usernameFilter);
+
+                userVideos.forEach(video => {
+                    const card = document.createElement('div');
+                    card.className = 'video-card';
+
+                    // Video link
+                    const link = document.createElement('a');
+                    link.href = video.videoUrl; // Can link to a page if you have one
+                    link.textContent = video.title;
+                    card.appendChild(link);
+
+                    // Description (optional)
+                    const desc = document.createElement('div');
+                    desc.className = 'description';
+                    desc.textContent = ""; // You can add descriptions in feed.json later
+                    card.appendChild(desc);
+
+                    listContainer.appendChild(card);
+                });
+
+                if(userVideos.length === 0){
+                    listContainer.innerHTML = '<p>No videos found for this user.</p>';
+                }
+
+            } catch (err) {
+                console.error('Failed to load videos:', err);
+                const listContainer = document.getElementById('video-list');
+                listContainer.innerHTML = '<p style="color:red;">Failed to load feed.</p>';
+            }
+        }
+
+        loadUserVideos();
+    </script>
 </body>
 </html>
