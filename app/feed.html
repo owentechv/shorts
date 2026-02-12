@@ -3,85 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feed - Luma Shorts</title>
-    <link rel="stylesheet" href="feed-styles.css">
+    <title>404 - Luma Shorts</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <img src="logo.png" alt="Luma Shorts Logo" class="logo-image">
-        <div class="logo-text">Luma Shorts</div>
+            <img src="logo.png" alt="Luma Shorts Logo" class="logo-image">
+            <div class="logo-text">Luma Shorts</div>
+        </a>
     </nav>
 
-    <!-- Feed Container -->
-    <div class="feed" id="feed"></div>
 
-    <script>
-        // URL to your feed.json
-        const feedUrl = 'https://owentechv.github.io/shorts/feed.json';
+    <!-- Desktop Homepage Content -->
+    <div class="homepage-content">
+        <h1>Wrong turn!</h1>
+        <p>You made a wrong turn and now you are here.</p>
+        <p>Use the menu on the side to leave this page.</p>
+    </div>
 
-        async function loadFeed() {
-            try {
-                const response = await fetch(feedUrl);
-                const videos = await response.json();
-
-                const feedContainer = document.getElementById('feed');
-
-                videos.forEach(video => {
-                    // Video card container
-                    const card = document.createElement('div');
-                    card.className = 'video-card';
-
-                    // Video element
-                    const videoEl = document.createElement('video');
-                    videoEl.src = video.videoUrl;
-                    videoEl.controls = true;
-                    card.appendChild(videoEl);
-
-                    // User info container
-                    const userInfo = document.createElement('div');
-                    userInfo.className = 'user-info';
-
-                    const avatar = document.createElement('img');
-                    avatar.src = video.avatarUrl;
-                    avatar.alt = video.uploader;
-                    userInfo.appendChild(avatar);
-
-                    const textContainer = document.createElement('div');
-
-                    const username = document.createElement('div');
-                    username.className = 'username';
-                    username.textContent = video.uploader;
-
-                    const description = document.createElement('div');
-                    description.className = 'description';
-                    description.textContent = video.title;
-
-                    textContainer.appendChild(username);
-                    textContainer.appendChild(description);
-                    userInfo.appendChild(textContainer);
-
-                    card.appendChild(userInfo);
-
-                    // Optional share button (can remove later)
-                    /*
-                    const shareBtn = document.createElement('a');
-                    shareBtn.className = 'share-btn';
-                    shareBtn.href = '#';
-                    shareBtn.textContent = 'Share';
-                    card.appendChild(shareBtn);
-                    */
-
-                    feedContainer.appendChild(card);
-                });
-            } catch (err) {
-                console.error('Failed to load feed:', err);
-                const feedContainer = document.getElementById('feed');
-                feedContainer.innerHTML = '<p style="color:red;">Failed to load feed.</p>';
-            }
-        }
-
-        loadFeed();
-    </script>
 </body>
 </html>
